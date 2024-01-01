@@ -5,9 +5,6 @@ vim.opt.relativenumber = true
 -- Disable mouse
 vim.opt.mouse = ""
 
--- Set default theme 
-vim.cmd.colorscheme('desert')
-
 -- Tabs and spaces
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -22,3 +19,6 @@ vim.opt.hlsearch = false
 
 -- Draw a line at 100 characters
 vim.opt.colorcolumn = "100"
+
+-- Minimum screen lines to keep above and below the cursor when scrolling
+vim.opt.scrolloff = 8

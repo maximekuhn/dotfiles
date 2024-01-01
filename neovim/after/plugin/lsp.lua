@@ -1,8 +1,8 @@
 local lsp_zero = require("lsp-zero")
 
--- keybinds only active when LSP is running
+-- keybindings only active when LSP is running
 lsp_zero.on_attach(function(client, bufnr)
-	lsp_zero.default_keymaps({buffer = bufnr})
+    lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
 -- automatic LSP setup using Mason
@@ -17,6 +17,7 @@ require('mason-lspconfig').setup({
 -- auto-completion
 local cmp = require("cmp")
 local cmp_action = lsp_zero.cmp_action()
+local cmp_format = lsp_zero.cmp_format()
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
         -- `Enter` key to confirm completion
@@ -31,4 +32,7 @@ cmp.setup({
     completion = {
         completeopt = 'menu,menuone,noinsert'
     },       
+
+    -- Show source name in completion menu
+    formatting = cmp_format,
 })

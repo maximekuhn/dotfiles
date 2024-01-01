@@ -29,4 +29,13 @@ return require('packer').startup(function(use)
 	  }
   }
 
+  -- Treesitter
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
+
+  -- catpuccin colorscheme
+  use { "catppuccin/nvim", as = "catppuccin" }
+
 end)
