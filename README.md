@@ -16,8 +16,9 @@ Then, copy `neovim` directory into `~/.config/nvim/`:
 cp -R ./neovim ~/.config/nvim/
 ```
 
-Finally, open neovim and update packages (packer is my neovim package manager):
+Finally, navigate to `~/.config/nvim/lua/maximekuhn/packer.lua` and sync it:
 ```shell
-nvim ~/.config
+nvim ~/.config/nvim/lua/maximekuhn/packer.lua
+<Esc>:so<Enter>
 <Esc>:PackerSync<Enter>
 ```
