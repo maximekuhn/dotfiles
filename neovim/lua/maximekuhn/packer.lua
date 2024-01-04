@@ -38,4 +38,7 @@ return require('packer').startup(function(use)
   -- catpuccin colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }
 
+  -- Rust tools
+  use 'simrat39/rust-tools.nvim'
+
 end)

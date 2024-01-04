@@ -13,12 +13,23 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 -- automatic LSP setup using Mason
+local lsp_config = require("lspconfig")
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {},
-	handlers = {
-		lsp_zero.default_setup,
-	},
+    ensure_installed = {'rust_analyzer', 'lua_ls'},
+    handlers = {
+        lsp_zero.default_setup,
+
+        -- Lua
+        lua_ls = function()
+            lsp_config.lua_ls.setup({})
+        end,
+
+        -- Rust
+        rust_analyzer = function()
+            require("rust-tools").setup({})
+        end
+    },
 })
 
 -- auto-completion
@@ -38,8 +49,9 @@ cmp.setup({
     preselect = 'item',
     completion = {
         completeopt = 'menu,menuone,noinsert'
-    },       
+    },
 
     -- Show source name in completion menu
     formatting = cmp_format,
 })
+
