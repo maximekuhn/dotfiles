@@ -43,6 +43,10 @@ cmp.setup({
 
         -- Ctrl+Space to trigger completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
+
+        -- Scroll docs
+        ['<C-f>'] = cmp.mapping.scroll_docs(-2),
+        ['<C-b>'] = cmp.mapping.scroll_docs(2),
     }),
 
     -- Preselect first item when completion menu shows up
