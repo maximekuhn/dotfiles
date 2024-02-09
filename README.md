@@ -22,3 +22,5 @@ nvim ~/.config/nvim/lua/maximekuhn/packer.lua
 <Esc>:so<Enter>
 <Esc>:PackerSync<Enter>
 ```
+
+## Visual Studio Code
