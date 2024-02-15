@@ -15,5 +15,14 @@ return {
     {
         "nvim-treesitter/nvim-treesitter", 
         build = ":TSUpdate"
-    }
+    },
+    -- LSP/Mason
+    {
+        "williamboman/mason.nvim",
+        dependencies = { "williamboman/mason-lspconfig.nvim" },
+    },
+    -- LSP
+    {
+        "neovim/nvim-lspconfig",
+    },
 }
