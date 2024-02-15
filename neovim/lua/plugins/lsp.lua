@@ -26,6 +26,9 @@ return {
                     require('luasnip').lsp_expand(args.body)
                 end,
             },
+
+            -- Preselect first item when completion menu shows up
+            preselect = 'item',
         })
 
         -- LSP
