@@ -37,6 +37,7 @@ return {
                 end, opts)
 
                 -- (r)e(n)ame
+                -- TODO: find a way to write all affected buffers
                 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
             end
         })
