@@ -1,7 +1,33 @@
 return {
     "neovim/nvim-lspconfig",
+    dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", },
 
     config = function()
+        -- Completion
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        local cmp = require('cmp')
+        cmp.setup({
+            sources = {
+                { name = 'nvim_lsp' },
+            },
+
+            -- Key mapping
+            mapping = cmp.mapping.preset.insert({
+                ['<CR>'] = cmp.mapping.confirm({ select = false }),
+                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                ['<C-Space>'] = cmp.mapping.complete(),
+            }),
+
+            -- LuaSnip
+            snippet = {
+                expand = function(args)
+                    require('luasnip').lsp_expand(args.body)
+                end,
+            },
+        })
+
+        -- LSP
         local lspconfig = require("lspconfig")
 
         -- Global mappings
@@ -20,6 +46,7 @@ return {
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 
                 -- (g)o to (i)mplementation
+
                 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 
                 -- (g)o to (r)eferences
@@ -43,9 +70,13 @@ return {
         })
 
         -- Rust analyzer
-        lspconfig.rust_analyzer.setup {}
+        lspconfig.rust_analyzer.setup {
+            capabilities = capabilities,
+        }
 
         -- Lua ls
-        lspconfig.lua_ls.setup {}
+        lspconfig.lua_ls.setup {
+            capabilities = capabilities,
+        }
     end
 }
