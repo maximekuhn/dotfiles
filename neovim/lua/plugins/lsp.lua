@@ -1,9 +1,27 @@
+---@param completion lsp.CompletionItem
+---@param source cmp.Source
+local function get_lsp_completion_context(completion, source)
+    local ok, source_name = pcall(function() return source.source.client.config.name end)
+    if not ok then
+        return nil
+    end
+    if source_name == "rust_analyzer" then
+        -- To analyze payload, set lsp log level to 'debug':
+        -- vim.lsp.set_log_level("debug")
+        if completion.labelDetails ~= nil then
+            return completion.labelDetails.detail
+        end
+        return nil
+    end
+end
+
 return {
     "neovim/nvim-lspconfig",
     dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", },
 
     config = function()
         -- Completion
+        vim.o.completeopt = "menuone,noinsert,noselect"
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
         local cmp = require('cmp')
         cmp.setup({
@@ -29,6 +47,27 @@ return {
 
             -- Menu appearance
             formatting = {
+                format = function(entry, vim_item)
+                    -- vim_item: menu, abbr, kind
+                    -- entry: cmp.Source
+
+                    -- Show the completion source
+                    vim_item.menu = ({
+                        buffer = "[Buffer]",
+                        nvim_lsp = "[LSP]",
+                        luasnip = "[LuaSnip]",
+                    })[entry.source.name]
+
+                    -- Show completion context
+                    -- TODO: completion_context might be something else than a string
+                    -- For rust_analyzer, it is a string
+                    local completion_context = get_lsp_completion_context(entry.completion_item, entry.source)
+                    if completion_context ~= nil then
+                        vim_item.menu = vim_item.menu .. " " .. completion_context
+                    end
+
+                    return vim_item
+                end,
             },
         })
 
@@ -79,6 +118,15 @@ return {
         -- Rust analyzer
         lspconfig.rust_analyzer.setup {
             capabilities = capabilities,
+            settings = {
+                ['rust-analyzer'] = {
+                    inlayHints = {
+                        chainingHints = true,
+                        parameterHints = true,
+                        typeHints = true,
+                    },
+                }
+            }
         }
 
         -- Lua ls
