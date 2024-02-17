@@ -20,6 +20,26 @@ local function get_lsp_completion_context(completion, source)
     end
 end
 
+-- Truncates a completion menu field ('abbr' or 'menu' so the menu isn't too big
+---@param value string
+---@param is_abbr boolean
+local function truncate_completion_menu_field(value, is_abbr)
+    local ELLIPSIS_CHAR = "..."
+    local MAX_CHAR_MENU = 50
+    local MAX_CHAR_ABBR = 20
+
+    local len_to_compare = MAX_CHAR_MENU
+    if is_abbr then
+        len_to_compare = MAX_CHAR_ABBR
+    end
+
+    if string.len(value) > len_to_compare then
+        return string.sub(value, 1, len_to_compare - string.len(ELLIPSIS_CHAR)) .. ELLIPSIS_CHAR
+    end
+
+    return value
+end
+
 return {
     "neovim/nvim-lspconfig",
     dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", },
@@ -70,6 +90,10 @@ return {
                     if completion_context ~= nil then
                         vim_item.menu = vim_item.menu .. " " .. completion_context
                     end
+
+                    -- Truncates fields
+                    vim_item.abbr = truncate_completion_menu_field(vim_item.abbr, true)
+                    vim_item.menu = truncate_completion_menu_field(vim_item.menu, false)
 
                     return vim_item
                 end,
