@@ -10,14 +10,16 @@ local function get_lsp_completion_context(completion, source)
     if not ok then
         return nil
     end
+
     if source_name == "rust_analyzer" then
         -- To analyze payload, set lsp log level to 'debug':
         -- vim.lsp.set_log_level("debug")
         if completion.labelDetails ~= nil then
             return completion.labelDetails.detail
         end
-        return nil
     end
+
+    return nil
 end
 
 -- Truncates a completion menu field ('abbr' or 'menu' so the menu isn't too big
