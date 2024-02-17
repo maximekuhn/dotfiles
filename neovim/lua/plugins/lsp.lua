@@ -1,3 +1,8 @@
+-- Find the completion context for a given entry
+-- The completion context is the entry path (ex: std::fs::File)
+-- If no completion context is present, then nil is returned
+-- This method is very experimental but works fine for rust_analyzer
+-- TODO: support other LSP
 ---@param completion lsp.CompletionItem
 ---@param source cmp.Source
 local function get_lsp_completion_context(completion, source)
