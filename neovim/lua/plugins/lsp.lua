@@ -26,9 +26,6 @@ return {
                     require('luasnip').lsp_expand(args.body)
                 end,
             },
-
-            -- Preselect first item when completion menu shows up
-            preselect = 'item',
         })
 
         -- LSP
@@ -39,6 +36,8 @@ return {
         vim.keymap.set('n', '<leader>gnd', vim.diagnostic.goto_prev)
         -- (g)o to (p)rev (d)iagnostic
         vim.keymap.set('n', '<leader>gpd', vim.diagnostic.goto_next)
+        -- (o)pen (d)iagnostic
+        vim.keymap.set('n', '<leader>od', vim.diagnostic.open_float)
 
         -- Keymaps active only when a server is attached
         vim.api.nvim_create_autocmd('LspAttach', {
@@ -68,7 +67,7 @@ return {
                 end, opts)
 
                 -- (r)e(n)ame
-                -- TODO: find a way to write all affected buffers
+                -- TODO: find a way to write all affected buffers (:wa)
                 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
             end
         })

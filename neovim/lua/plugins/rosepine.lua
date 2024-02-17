@@ -1,5 +1,5 @@
 return {
-    "rose-pine/neovim", 
+    "rose-pine/neovim",
     name = "rose-pine",
     config = function()
         -- configure colorscheme
@@ -9,7 +9,10 @@ return {
                 LineNr = {
                     fg = "#f6c177"
                 }
-            }
+            },
+
+            -- Remove background
+            disable_background = true,
         })
         -- load colorscheme
         vim.cmd("colorscheme rose-pine")
