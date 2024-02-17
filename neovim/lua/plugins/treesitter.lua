@@ -9,7 +9,7 @@ return {
         configs.setup({
             ensure_installed = { "lua", "rust", },
             sync_install = false,
-            highlight = { enable = true },
+            --highlight = { enable = true },
             indent = { enable = true },
         })
     end

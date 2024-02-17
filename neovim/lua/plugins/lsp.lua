@@ -26,6 +26,10 @@ return {
                     require('luasnip').lsp_expand(args.body)
                 end,
             },
+
+            -- Menu appearance
+            formatting = {
+            },
         })
 
         -- LSP
