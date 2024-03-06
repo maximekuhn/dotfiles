@@ -166,5 +166,10 @@ return {
         lspconfig.lua_ls.setup {
             capabilities = capabilities,
         }
+
+        -- TS Server
+        lspconfig.tsserver.setup {
+            capabilities = capabilities,
+        }
     end
 }
