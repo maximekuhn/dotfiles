@@ -28,8 +28,8 @@ end
 local function truncate_completion_menu_field(value, is_abbr)
     local window_width = vim.api.nvim_win_get_width(0)
     local ELLIPSIS_CHAR = "..."
-    local MAX_CHAR_MENU = window_width * 3 / 8
-    local MAX_CHAR_ABBR = window_width * 2 / 8
+    local MAX_CHAR_MENU = window_width * 3 / 10
+    local MAX_CHAR_ABBR = window_width * 2 / 10
 
     local len_to_compare = MAX_CHAR_MENU
     if is_abbr then
