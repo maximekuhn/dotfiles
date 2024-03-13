@@ -15,6 +15,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Navigate between windows
 vim.keymap.set("n", "<C-l>", "<C-W>l")
 vim.keymap.set("n", "<C-h>", "<C-W>h")
+vim.keymap.set("n", "<C-j>", "<C-W>j")
+vim.keymap.set("n", "<C-k>", "<C-W>k")
 
 -- Copy to clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", '"+y')
