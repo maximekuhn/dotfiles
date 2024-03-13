@@ -130,6 +130,9 @@ return {
                 -- (g)o to (d)efinition
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 
+                -- (g)o to (T)ype definition
+                vim.keymap.set('n', 'gT', vim.lsp.buf.type_definition, opts)
+
                 -- (g)o to (i)mplementation
 
                 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
