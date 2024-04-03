@@ -51,7 +51,7 @@ end
 
 return {
     "neovim/nvim-lspconfig",
-    dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", },
+    dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "hrsh7th/cmp-path", },
 
     config = function()
         -- Completion
@@ -63,6 +63,7 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
                 { name = 'buffer' },
+                { name = 'path' },
             },
 
             -- Key mapping
@@ -91,6 +92,7 @@ return {
                         buffer = "[Buffer]",
                         nvim_lsp = "[LSP]",
                         luasnip = "[LuaSnip]",
+                        path = "[Path]",
                     })[entry.source.name]
 
                     -- Show completion context
