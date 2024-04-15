@@ -176,6 +176,13 @@ return {
         -- Lua ls
         lspconfig.lua_ls.setup {
             capabilities = capabilities,
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }
+                    }
+                }
+            }
         }
 
         -- TS Server
