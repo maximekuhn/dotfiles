@@ -19,4 +19,7 @@ vim.keymap.set("n", "<C-j>", "<C-W>j")
 vim.keymap.set("n", "<C-k>", "<C-W>k")
 
 -- Copy to clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", '"+y')
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
+
+-- Paste and yank to the blank register
+vim.keymap.set({ "n", "v" }, "<leader>p", [["_dP]])
