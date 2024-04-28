@@ -5,7 +5,11 @@ return {
     config = function()
         -- Setup Mason
         local mason = require("mason")
-        mason.setup()
+        mason.setup({
+            ui = {
+                border = "rounded"
+            }
+        })
 
         local mason_lspconfig = require("mason-lspconfig")
         mason_lspconfig.setup({

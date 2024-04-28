@@ -17,4 +17,9 @@ require("config.remap")
 require("config.set")
 
 -- Setup lazy
-require("lazy").setup("plugins")
+require("lazy").setup({
+    spec = "plugins",
+    ui = {
+        border = "rounded"
+    }
+})
