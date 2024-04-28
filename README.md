@@ -10,6 +10,10 @@ Post install:
 :checkhealth
 ```
 
+required:
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [JetBrains Mono Nerd Font](https://www.nerdfonts.com/font-downloads)
+
 ## Tmux
 - TMUX v3.3
 
