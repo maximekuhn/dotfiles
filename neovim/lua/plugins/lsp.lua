@@ -203,23 +203,5 @@ return {
             capabilities = capabilities,
             handlers = handlers,
         }
-
-        -- Local markdown lsp server
-        local local_markdown_lsp_client = vim.lsp.start_client {
-            name = "markdown-lsp",
-            cmd = { "/Users/maximekuhn/Developer/code/rust/markdown-lsp/target/debug/server" },
-        }
-
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = "markdown",
-            callback = function()
-                if not local_markdown_lsp_client then
-                    vim.notify "client not properly setup for markdown-lsp"
-                else
-                    vim.lsp.buf_attach_client(0, local_markdown_lsp_client)
-                    vim.notify "successfully attached markdown-lsp to this buffer"
-                end
-            end
-        })
     end
 }
