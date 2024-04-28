@@ -164,9 +164,16 @@ return {
             end
         })
 
+        -- Change borders
+        local handlers = {
+            ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+            ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+        }
+
         -- Rust analyzer
         lspconfig.rust_analyzer.setup {
             capabilities = capabilities,
+            handlers = handlers,
             settings = {
                 ['rust-analyzer'] = {
                     inlayHints = {
@@ -181,6 +188,7 @@ return {
         -- Lua ls
         lspconfig.lua_ls.setup {
             capabilities = capabilities,
+            handlers = handlers,
             settings = {
                 Lua = {
                     diagnostics = {
@@ -193,6 +201,7 @@ return {
         -- TS Server
         lspconfig.tsserver.setup {
             capabilities = capabilities,
+            handlers = handlers,
         }
 
         -- Local markdown lsp server
