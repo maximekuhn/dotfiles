@@ -23,3 +23,5 @@ vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 
 -- Paste and yank to the blank register
 vim.keymap.set({ "n", "v" }, "<leader>p", [["_dP]])
+
+-- Split

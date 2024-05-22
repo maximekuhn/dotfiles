@@ -25,6 +25,12 @@ local function get_lsp_completion_context(completion, source)
         end
     end
 
+    if source_name == "gopls" then
+        if completion.detail ~= nil then
+            return completion.detail
+        end
+    end
+
     return nil
 end
 
@@ -203,5 +209,12 @@ return {
             capabilities = capabilities,
             handlers = handlers,
         }
+
+        -- Golang
+        lspconfig.gopls.setup {
+            capabilities = capabilities,
+            handlers = handlers,
+        }
+
     end
 }
