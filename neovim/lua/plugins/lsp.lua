@@ -38,6 +38,10 @@ end
 ---@param value string
 ---@param is_abbr boolean
 local function truncate_completion_menu_field(value, is_abbr)
+    if value == nil then
+        return value
+    end
+
     local window_width = vim.api.nvim_win_get_width(0)
     local ELLIPSIS_CHAR = "..."
     local MAX_CHAR_MENU = window_width * 3 / 10
@@ -57,7 +61,7 @@ end
 
 return {
     "neovim/nvim-lspconfig",
-    dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "hrsh7th/cmp-path", },
+    dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "hrsh7th/cmp-path", "hrsh7th/cmp-nvim-lsp-signature-help" },
 
     config = function()
         -- Completion
@@ -70,6 +74,7 @@ return {
                 { name = 'luasnip' },
                 { name = 'buffer' },
                 { name = 'path' },
+                { name = 'nvim_lsp_signature_help' },
             },
 
             -- Key mapping
