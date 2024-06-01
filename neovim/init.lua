@@ -16,6 +16,13 @@ vim.opt.rtp:prepend(lazypath)
 require("config.remap")
 require("config.set")
 
+-- Add templ filetypes
+vim.filetype.add {
+  extension = {
+    templ = "templ"
+  }
+}
+
 -- Setup lazy
 require("lazy").setup({
     spec = "plugins",

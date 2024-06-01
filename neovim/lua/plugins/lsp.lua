@@ -219,7 +219,17 @@ return {
         lspconfig.gopls.setup {
             capabilities = capabilities,
             handlers = handlers,
+            settings = {
+                gopls = {
+                    buildFlags = { "-tags=integration" }
+                }
+            },
         }
 
+        -- Golang/templ
+        lspconfig.templ.setup {
+            capabilities = capabilities,
+            handlers = handlers,
+        }
     end
 }
