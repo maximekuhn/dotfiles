@@ -20,3 +20,6 @@ required:
 location: `~/.tmux.conf`
 
 ## Visual Studio Code
+
+## Jetbrains IDE (IntelliJ, Goland, RustRover, ...)
+location: `~/.ideavimrc`

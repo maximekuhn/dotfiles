@@ -1,0 +1,42 @@
+" -- Leader
+" set leader to <space>
+let mapleader = " "
+
+" -- Basic settings
+" Show a few lines of context around the cursor
+set scrolloff=5
+
+" Do incremental searching
+set incsearch
+
+" Relative line number
+set nu
+set rnu
+
+" Join lines
+set ideajoin
+
+" -- Remap
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" Move selection up/down
+map K <Action>(MoveStatementUp)
+map J <Action>(MoveStatementDown)
+
+" Rename
+map <leader>rn <Action>(RenameElement)
+
+" Show usage
+map gr <Action>(ShowUsages)
+
+" Open go to file menu
+map <leader>pf <Action>(GotoFile)
+
+" -- Plugins
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
