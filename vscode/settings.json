@@ -1,66 +1,59 @@
 {
-    "editor.fontFamily": "'Jetbrains Mono', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 16,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "window.autoDetectColorScheme": true,
-    "window.zoomLevel": 1,
-    "workbench.sideBar.location": "right",
+    "terminal.integrated.fontSize": 14,
+    "gopls": {
+        "ui.semanticTokens": true 
+    },
     "editor.lineNumbers": "relative",
-    "workbench.preferredLightColorTheme": "Monokai",
     "workbench.iconTheme": "material-icon-theme",
-    // VIM
-    "vim.leader": "<Space>",
+    "editor.wordWrap": "on",
+    "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
-        // format code
         {
-            "before": [
-                "<leader>",
-                "m",
-                "c",
-                "p"
-            ],
+            "before": ["<leader>", "p", "f"],
             "commands": [
-                "editor.action.formatDocument"
+                "workbench.action.quickOpen"
             ]
         },
-        // go to file on the left
         {
-            "before": [
-                "<S-h>"
-            ],
+            "before": ["<leader>", "r", "n"],
             "commands": [
-                ":bprevious"
+                "editor.action.rename"
             ]
         },
-        // go to file on the right
         {
-            "before": [
-                "<S-l>"
-            ],
+            "before": ["<leader>", "c", "m"],
             "commands": [
-                ":bnext"
+                "editor.action.quickFix"
             ]
         },
-        // Go to the next diagnostic
         {
-            "before": [
-                "<leader>",
-                "n",
-                "d"
-            ],
+            "before": ["<leader>", "g", "r"],
             "commands": [
-                "editor.action.marker.nextInFiles"
+                "editor.action.goToReferences"
             ]
         },
-        // Go to the previous diagnostic
         {
-            "before": [
-                "<leader>",
-                "p",
-                "d"
-            ],
+            "before": ["K"],
             "commands": [
-                "editor.action.marker.prevInFiles"
+                "editor.action.showHover"
             ]
         },
     ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["J"],
+            "commands": [
+                "editor.action.moveLinesDownAction"
+            ]
+        },
+        {
+            "before": ["K"],
+            "commands": [
+                "editor.action.moveLinesUpAction"
+            ]
+        }
+    ]
 }
