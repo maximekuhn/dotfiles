@@ -4,7 +4,7 @@
     "window.autoDetectColorScheme": true,
     "terminal.integrated.fontSize": 14,
     "gopls": {
-        "ui.semanticTokens": true 
+        "ui.semanticTokens": true
     },
     "editor.lineNumbers": "relative",
     "workbench.iconTheme": "material-icon-theme",
@@ -12,48 +12,99 @@
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["<leader>", "p", "f"],
+            "before": [
+                "<leader>",
+                "p",
+                "f"
+            ],
             "commands": [
                 "workbench.action.quickOpen"
             ]
         },
         {
-            "before": ["<leader>", "r", "n"],
+            "before": [
+                "<leader>",
+                "r",
+                "n"
+            ],
             "commands": [
                 "editor.action.rename"
             ]
         },
         {
-            "before": ["<leader>", "c", "m"],
+            "before": [
+                "<leader>",
+                "c",
+                "m"
+            ],
             "commands": [
                 "editor.action.quickFix"
             ]
         },
         {
-            "before": ["<leader>", "g", "r"],
+            "before": [
+                "<leader>",
+                "g",
+                "r"
+            ],
             "commands": [
                 "editor.action.goToReferences"
             ]
         },
         {
-            "before": ["K"],
+            "before": [
+                "K"
+            ],
             "commands": [
                 "editor.action.showHover"
             ]
         },
+        {
+            "before": [
+                "c-d"
+            ],
+            "after": [
+                "M",
+                "c-d"
+            ]
+        },
+        {
+            "before": [
+                "c-u"
+            ],
+            "after": [
+                "c-u",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "T"
+            ],
+            "commands": [
+                "editor.action.goToTypeDefinition"
+            ]
+        }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["J"],
+            "before": [
+                "J"
+            ],
             "commands": [
                 "editor.action.moveLinesDownAction"
             ]
         },
         {
-            "before": ["K"],
+            "before": [
+                "K"
+            ],
             "commands": [
                 "editor.action.moveLinesUpAction"
             ]
         }
-    ]
+    ],
+    "editor.formatOnSave": true
 }
