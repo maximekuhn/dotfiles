@@ -23,3 +23,6 @@ location: `~/.tmux.conf`
 
 ## Jetbrains IDE (IntelliJ, Goland, RustRover, ...)
 location: `~/.ideavimrc`
+
+## Zed
+location: `~/.config/zed`

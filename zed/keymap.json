@@ -1,0 +1,20 @@
+[
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space c m": "editor::ToggleCodeActions",
+      "space p f": "file_finder::Toggle",
+      "space r n": "editor::Rename",
+      "space g r": "editor::FindAllReferences",
+      "g T": "editor::GoToTypeDefinition",
+      "g I": "editor::GoToImplementation"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "K": "editor::MoveLineUp",
+      "J": "editor::MoveLineDown"
+    }
+  }
+]
