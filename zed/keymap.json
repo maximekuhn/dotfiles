@@ -8,7 +8,13 @@
       "space g r": "editor::FindAllReferences",
       "g T": "editor::GoToTypeDefinition",
       "g I": "editor::GoToImplementation",
-      "space t g b": "editor::ToggleGitBlame"
+      "space t g b": "editor::ToggleGitBlame",
+      "space g m": [
+        "task::Spawn",
+        {
+          "task_name": "Git menu"
+        }
+      ]
     }
   },
   {
