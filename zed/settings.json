@@ -13,7 +13,7 @@
   "theme": {
     "mode": "system",
     "dark": "Andromeda",
-    "light": "Solarized Light"
+    "light": "One Light"
   },
   "vim_mode": true,
   "telemetry": {
@@ -22,7 +22,6 @@
   },
   "ui_font_size": 16,
   "buffer_font_size": 16,
-  "ui_font_family": "JetBrainsMono Nerd Font",
   "soft_wrap": "editor_width",
   "relative_line_numbers": true
 }
