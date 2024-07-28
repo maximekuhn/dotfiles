@@ -1,19 +1,22 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = { "nvim-treesitter/playground", "nvim-treesitter/nvim-treesitter-context" },
-    build = ":TSUpdate",
+	"nvim-treesitter/nvim-treesitter",
+	dependencies = { "nvim-treesitter/playground", "nvim-treesitter/nvim-treesitter-context" },
+	build = ":TSUpdate",
 
-    config = function()
-        local configs = require("nvim-treesitter.configs")
+	config = function()
+		local configs = require("nvim-treesitter.configs")
 
-        configs.setup({
-            ensure_installed = {
-                "lua",
-                "rust",
-            },
-            sync_install = false,
-            highlight = { enable = true },
-            indent = { enable = true },
-        })
-    end
+		configs.setup({
+			ensure_installed = {
+				"lua",
+				"rust",
+				"html",
+				"css",
+				"tsx",
+			},
+			sync_install = false,
+			highlight = { enable = true },
+			indent = { enable = true },
+		})
+	end,
 }

@@ -1,15 +1,17 @@
 return {
-    "williamboman/mason.nvim",
-    dependencies = { "williamboman/mason-lspconfig.nvim" },
+	"williamboman/mason.nvim",
+	dependencies = { "williamboman/mason-lspconfig.nvim" },
 
-    config = function()
-        require("mason").setup()
+	config = function()
+		require("mason").setup()
 
-        require("mason-lspconfig").setup {
-            ensure_installed = { 
-                "lua_ls",
-                -- "rust_analyzer", installed via rustup
-            },
-        }
-    end
+		require("mason-lspconfig").setup({
+			ensure_installed = {
+				"lua_ls",
+				-- "rust_analyzer", installed via rustup
+				"tsserver",
+				"tailwindcss",
+			},
+		})
+	end,
 }

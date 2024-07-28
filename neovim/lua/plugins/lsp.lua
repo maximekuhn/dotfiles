@@ -34,6 +34,16 @@ return {
 			},
 		})
 
+		-- typescript
+		lspconfig.tsserver.setup({
+			capabilities = capabilities,
+		})
+
+		-- tailwind CSS
+		lspconfig.tailwindcss.setup({
+			capabilities = capabilities,
+		})
+
 		-- keymaps
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(event)
