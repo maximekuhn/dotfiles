@@ -14,8 +14,5 @@ vim.opt.smartindent = true
 -- Incremental search
 vim.opt.hlsearch = false
 
--- Draw a vertical line to the right
-vim.opt.colorcolumn = "100"
-
--- Terminal colors
-vim.termguicolors = true
+-- Disable mouse
+vim.opt.mouse = ""
