@@ -18,3 +18,6 @@ vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 -- Paste and yank to the blank register
 vim.keymap.set({ "n", "v" }, "<leader>p", [["_dP]])
 
+-- Quickfix list next/previous
+vim.keymap.set("n", "<C-j>", ":cnext<CR>")
+vim.keymap.set("n", "<C-k>", ":cprev<CR>")
