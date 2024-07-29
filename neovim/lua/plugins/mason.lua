@@ -11,6 +11,7 @@ return {
 				-- "rust_analyzer", installed via rustup
 				"tsserver",
 				"tailwindcss",
+				"gopls",
 			},
 		})
 	end,

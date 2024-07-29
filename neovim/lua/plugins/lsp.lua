@@ -44,6 +44,26 @@ return {
 			capabilities = capabilities,
 		})
 
+		-- golang
+		lspconfig.gopls.setup({
+			capabilities = capabilities,
+			settings = {
+				gopls = {
+					-- note: inlay hints will only be visible
+					-- if vim.lsp.inlay_hint.is_enabled returns true
+					hints = {
+						assignVariableTypes = true,
+						compositeLiteralFields = true,
+						compositeLiteralTypes = true,
+						constantValues = true,
+						functionTypeParameters = true,
+						parameterNames = true,
+						rangeVariableTypes = true,
+					},
+				},
+			},
+		})
+
 		-- keymaps
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(event)
@@ -78,6 +98,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				rust = { "rustfmt" },
+				go = { "goimports", "gofmt" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
