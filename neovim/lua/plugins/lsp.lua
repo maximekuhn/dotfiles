@@ -49,6 +49,9 @@ return {
 			capabilities = capabilities,
 			settings = {
 				gopls = {
+					-- for gopls to work when using build tags
+					buildFlags = { "-tags=integration" },
+
 					-- note: inlay hints will only be visible
 					-- if vim.lsp.inlay_hint.is_enabled returns true
 					hints = {
