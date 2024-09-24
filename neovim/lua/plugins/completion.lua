@@ -36,9 +36,9 @@ return {
             },
             sources = {
                 { name = "luasnip" },
-                { name = "buffer" },
-                { name = "path" },
                 { name = "nvim_lsp" },
+                { name = "path" },
+                { name = "buffer" },
             },
             mapping = cmp.mapping.preset.insert({
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -92,6 +92,5 @@ return {
                 end
             },
         })
-
     end,
 }
