@@ -72,6 +72,12 @@ return {
             capabilities = capabilities,
         })
 
+
+        -- zig
+        lspconfig.zls.setup({
+            capabilities = capabilities,
+        })
+
         -- keymaps
         vim.api.nvim_create_autocmd("LspAttach", {
             callback = function(event)

@@ -13,6 +13,7 @@ return {
                 "tailwindcss",
                 "gopls",
                 "templ",
+                "zls",
             },
         })
     end,

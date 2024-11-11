@@ -15,6 +15,8 @@ return {
                 "tsx",
                 "go",
                 "templ",
+                "templ",
+                "zig",
             },
             sync_install = false,
             highlight = { enable = true },
