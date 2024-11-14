@@ -16,22 +16,45 @@ set rnu
 " Join lines
 set ideajoin
 
+" Prevent beeping on error
+set visualbell
+
 " -- Remap
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
 " Move selection up/down
-map K <Action>(MoveStatementUp)
-map J <Action>(MoveStatementDown)
+vmap K <Action>(MoveStatementUp)
+vmap J <Action>(MoveStatementDown)
 
 " Rename
 map <leader>rn <Action>(RenameElement)
 
-" Show usage
-map gr <Action>(ShowUsages)
+" Go to definition
+map gd <Action>(GotoDeclaration)
 
-" Open go to file menu
+" Go to implementation
+map gI <Action>(GotoImplementation)
+
+" Go to type definition
+map gT <Action>(GotoTypeDeclaration)
+
+" Code action
+map <leader>cm <Action>(ShowIntentionActions)
+
+" Show usage
+map <leader>gr <Action>(ShowUsages)
+
+" Project find and project grep
 map <leader>pf <Action>(GotoFile)
+map <leader>pg <Action>(FindInPath)
+
+" Copy to clipboard
+map <leader>y "+y
+
+" Better jump, default one seems broken
+nmap <C-o> :action Back<CR>
+nmap <C-i> :action Forward<CR>
 
 " -- Plugins
 " Highlight copied text
@@ -39,4 +62,3 @@ Plug 'machakann/vim-highlightedyank'
 
 " Commentary plugin
 Plug 'tpope/vim-commentary'
-
