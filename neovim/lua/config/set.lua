@@ -16,3 +16,6 @@ vim.opt.hlsearch = false
 
 -- Disable mouse
 vim.opt.mouse = ""
+
+-- Width indicator
+vim.opt.colorcolumn = "80"

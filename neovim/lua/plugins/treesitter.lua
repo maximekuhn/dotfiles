@@ -17,6 +17,7 @@ return {
                 "templ",
                 "templ",
                 "zig",
+                "svelte",
             },
             sync_install = false,
             highlight = { enable = true },

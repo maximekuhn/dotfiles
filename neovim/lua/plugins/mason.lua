@@ -14,6 +14,7 @@ return {
                 "gopls",
                 "templ",
                 "zls",
+                "svelte",
             },
         })
     end,

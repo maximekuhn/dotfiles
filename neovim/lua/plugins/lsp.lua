@@ -78,6 +78,11 @@ return {
             capabilities = capabilities,
         })
 
+        -- svelte
+        lspconfig.svelte.setup({
+            capabilities = capabilities,
+        })
+
         -- keymaps
         vim.api.nvim_create_autocmd("LspAttach", {
             callback = function(event)
