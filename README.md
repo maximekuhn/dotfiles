@@ -26,3 +26,6 @@ location: `~/.ideavimrc`
 
 ## Zed
 location: `~/.config/zed`
+
+## Tmux sessionizer
+localtion: `~/scripts`

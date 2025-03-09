@@ -21,8 +21,20 @@ export PATH="$PATH:$GOPATH/bin"
 # Node
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 
+# Custom scripts
+export PATH="$HOME/scripts:$PATH"
+
 # Default editor (neovim)
 export EDITOR="nvim"
+
+# Vi mode
+# bindkey -v
+
+# Load Angular CLI autocompletion.
+# source <(ng completion script)
+
+# Aliases
+alias nv=nvim
 
 # Load config
 source $ZSH/oh-my-zsh.sh
