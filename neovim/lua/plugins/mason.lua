@@ -9,7 +9,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 -- "rust_analyzer", installed via rustup
-                "tsserver",
+                "ts_ls",
                 "tailwindcss",
                 "gopls",
                 "templ",
