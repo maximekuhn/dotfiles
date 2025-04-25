@@ -1,7 +1,7 @@
 # dotfiles
 
 ## Neovim (nvim)
-- NVIM v0.10.x
+- NVIM v0.11.x
 
 location: `~/.config/nvim/`
 
