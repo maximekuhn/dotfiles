@@ -45,6 +45,13 @@ map <leader>cm <Action>(ShowIntentionActions)
 " Show usage
 map <leader>gr <Action>(ShowUsages)
 
+" Go to prev/next diagnostic
+map <leader>pd <Action>(GotoPreviousError)
+map <leader>nd <Action>(GotoNextError)
+
+" Open diagnostic
+map <leader>od <Action>(ShowErrorDescription)
+
 " Project find and project grep
 map <leader>pf <Action>(GotoFile)
 map <leader>pg <Action>(FindInPath)
