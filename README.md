@@ -15,6 +15,9 @@ stow <package_name>
 # example: stow i3
 ```
 
+> [!IMPORTANT]  
+> For xkb, symbols must be symlinked to /usr/share/X11/xkb/symbols/
+
 ## Neovim (nvim)
 - NVIM v0.11.x
 

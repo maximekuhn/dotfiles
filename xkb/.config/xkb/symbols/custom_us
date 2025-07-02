@@ -1,0 +1,11 @@
+default partial alphanumeric_keys
+xkb_symbols "custom_us" {
+	include "us"
+
+    // modifier + e -> "
+	key <AD03> { [ e, E, quotedbl ] };
+
+    // modifier for third mapping is Alt_r
+	include "level3(ralt_switch)"
+};
+
