@@ -38,8 +38,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xrandr --output DP-4 --mode 1920x1080 --rate 144
 
 # Keyboard mappings
-exec --no-startup-id setxkbmap -layout custom_us -variant custom_us
-exec --no-startup-id setxkbmap -option caps:escape
+exec_always --no-startup-id setxkbmap -layout custom_us -variant custom_us
+exec_always --no-startup-id setxkbmap -option caps:escape
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -60,6 +60,12 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+# start firefox
+bindsym $mod+b exec firefox
+
+# take a screenshot using flameshot
+bindsym $mod+shift+s exec flameshot gui
 
 # kill focused window
 bindsym $mod+Shift+q kill
