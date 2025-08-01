@@ -118,9 +118,11 @@ return {
                 lua = { "stylua" },
                 rust = { "rustfmt" },
                 go = { "goimports", "gofmt" },
+                typescript = { "prettier" },
+                svelte = { "prettier" },
             },
             format_on_save = {
-                timeout_ms = 500,
+                timeout_ms = 2500,
                 lsp_format = "fallback",
             },
         })
