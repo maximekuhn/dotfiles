@@ -18,32 +18,3 @@ stow <package_name>
 > [!IMPORTANT]  
 > For xkb, symbols must be symlinked to /usr/share/X11/xkb/symbols/
 
-## Neovim (nvim)
-- NVIM v0.11.x
-
-location: `~/.config/nvim/`
-
-Post install:
-```
-:checkhealth
-```
-
-required:
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [JetBrains Mono Nerd Font](https://www.nerdfonts.com/font-downloads)
-
-## Tmux
-- TMUX v3.3
-
-location: `~/.tmux.conf`
-
-## Visual Studio Code
-
-## Jetbrains IDE (IntelliJ, Goland, RustRover, ...)
-location: `~/.ideavimrc`
-
-## Zed
-location: `~/.config/zed`
-
-## Tmux sessionizer
-localtion: `~/scripts`
