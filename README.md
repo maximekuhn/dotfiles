@@ -18,3 +18,5 @@ stow <package_name>
 > [!IMPORTANT]  
 > For xkb, symbols must be symlinked to /usr/share/X11/xkb/symbols/
 
+> [!IMPORTANT]  
+> keyd config file must be located in /etc/keyd/default.conf
