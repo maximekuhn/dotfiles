@@ -5,6 +5,13 @@ return {
         "stevearc/conform.nvim",
     },
     config = function()
+        -- register gohtml files to be used with HTML LSP
+        vim.filetype.add({
+            extension = {
+                gohtml = "gohtml",
+            },
+        })
+
         local lspconfig = require("lspconfig")
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -50,7 +57,7 @@ return {
             settings = {
                 gopls = {
                     -- for gopls to work when using build tags
-                    buildFlags = { "-tags=integration" },
+                    buildFlags = { "-tags=integration,e2e" },
 
                     -- note: inlay hints will only be visible
                     -- if vim.lsp.inlay_hint.is_enabled returns true
@@ -81,6 +88,26 @@ return {
         -- svelte
         lspconfig.svelte.setup({
             capabilities = capabilities,
+        })
+
+        -- angular
+        lspconfig.angularls.setup({
+            capabilities = capabilities,
+        })
+
+        -- CSS
+        lspconfig.cssls.setup({
+            capabilities = capabilities,
+        })
+
+        -- HTML
+        lspconfig.html.setup({
+            capabilities = capabilities,
+            filetypes = {
+                "html",
+                "templ",
+                "gohtml",
+            },
         })
 
         -- keymaps
@@ -118,11 +145,11 @@ return {
                 lua = { "stylua" },
                 rust = { "rustfmt" },
                 go = { "goimports", "gofmt" },
-                typescript = { "prettier" },
-                svelte = { "prettier" },
+                javascript = { "prettier", stop_after_first = true },
+                typescript = { "prettier", stop_after_first = true },
             },
             format_on_save = {
-                timeout_ms = 2500,
+                timeout_ms = 500,
                 lsp_format = "fallback",
             },
         })

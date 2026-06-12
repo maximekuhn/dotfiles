@@ -15,6 +15,9 @@ return {
                 "templ",
                 "zls",
                 "svelte",
+                "angularls",
+                "cssls",
+                "html",
             },
         })
     end,
