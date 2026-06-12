@@ -1,0 +1,45 @@
+vim.pack.add({
+	-- Telescope
+	{
+		src = "https://github.com/nvim-lua/plenary.nvim",
+		version = "74b06c6c75e4eeb3108ec01852001636d85a932b",
+	},
+	{
+		src = "https://github.com/nvim-tree/nvim-web-devicons",
+		version = "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
+	},
+	{
+		src = "https://github.com/nvim-telescope/telescope.nvim",
+		version = "7d324792b7943e4aa16ad007212e6acc6f9fe335",
+	},
+
+	-- Auto-pairs,
+	{
+		src =  "https://github.com/nvim-mini/mini.pairs",
+		version = "30cf2f01c4aaa2033db67376b9924fa2442c05d6",
+	},
+
+	-- Color scheme
+	{
+		src = "https://github.com/rose-pine/neovim",
+		name = "rose-pine",
+		version = "ff483051a47e27d84bdef47703538df1ed9f4a47",
+	},
+
+	-- Git
+	{
+		src = "https://github.com/tpope/vim-fugitive",
+		version = "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+	},
+
+	-- Treesitter
+	{
+		src = "https://github.com/nvim-treesitter/nvim-treesitter",
+		version = "4916d6592ede8c07973490d9322f187e07dfefac",
+	},
+})
+
+require("plugins.autopairs")
+require("plugins.colors")
+require("plugins.telescope")
+require("plugins.treesitter")
