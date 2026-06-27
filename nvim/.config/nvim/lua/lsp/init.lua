@@ -1,4 +1,5 @@
 require("lsp.gopls")
+require("lsp.tailwindcss")
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("my.lsp.config", {}),
